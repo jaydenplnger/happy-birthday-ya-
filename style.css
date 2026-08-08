@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #101114;
+    color: #f5f5f5;
+    font-family: Georgia, "Times New Roman", serif;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.background span {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 20px;
+    animation: float 8s infinite ease-in-out;
+}
+
+.background span:nth-child(1) {
+    left: 10%;
+    top: 15%;
+}
+
+.background span:nth-child(2) {
+    left: 80%;
+    top: 20%;
+    animation-delay: 1s;
+}
+
+.background span:nth-child(3) {
+    left: 25%;
+    top: 70%;
+    animation-delay: 2s;
+}
+
+.background span:nth-child(4) {
+    left: 70%;
+    top: 65%;
+    animation-delay: 3s;
+}
+
+.background span:nth-child(5) {
+    left: 45%;
+    top: 10%;
+    animation-delay: 4s;
+}
+
+.background span:nth-child(6) {
+    left: 90%;
+    top: 80%;
+    animation-delay: 5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: translateY(-25px);
+        opacity: 0.6;
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.opening {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.small {
+    font-size: 14px;
+    letter-spacing: 3px;
+    opacity: 0.55;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(42px, 10vw, 80px);
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 18px;
+    opacity: 0.65;
+    margin-bottom: 35px;
+}
+
+button {
+    padding: 13px 25px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 30px;
+    background: transparent;
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: white;
+    color: #101114;
+}
+
+.message {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 100px 25px 120px;
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1.2s ease;
+}
+
+.message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 1.3;
+    margin-bottom: 45px;
+}
+
+.message p {
+    font-size: 18px;
+    line-height: 1.9;
+    margin-bottom: 28px;
+    color: rgba(255,255,255,0.82);
+}
+
+.message strong {
+    color: white;
+}
+
+.closing {
+    margin-top: 50px;
+}
+
+.end {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 25px;
+    line-height: 2;
+}
+
+.end span {
+    font-size: 15px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
